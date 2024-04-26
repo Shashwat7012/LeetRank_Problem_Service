@@ -9,7 +9,7 @@ function pingProblemController(req, res) {
 function addProblem(req, res, next) {
     try {
         // nothing implemented
-        throw new BadRequest('Problem Name',{missing : ["Problem Name"]});
+        throw new NotImplemented('Add Problem');
     } catch(error) {
         next(error);
     }
