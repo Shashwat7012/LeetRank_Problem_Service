@@ -1,58 +1,37 @@
-const {StatusCodes} = require('http-status-codes')
+const { StatusCodes } = require('http-status-codes');
 
-function pingProblemController(req,res){
-    return res.json({message: 'Problem Controller is up'});
+function pingProblemController(req, res) {
+    return res.json({message: 'Problem controller is up'});
 }
 
-
-function addProblem(req,res){
-<<<<<<< HEAD
-    return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
-=======
-    return res.status(501).json({
->>>>>>> 5e29e6c15c8c74fdebe78f1a182c917d3ff8e7d0
-        message:"Not Implemented"
-    })
+function addProblem(req, res) {
+    return res.status(StatusCodes.NOT_IMPLEMENTED).json({
+        message: 'Not implemented'
+    });
 }
 
-function getProblem(req,res){
-<<<<<<< HEAD
-    return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
-=======
-    return res.status(501).json({
->>>>>>> 5e29e6c15c8c74fdebe78f1a182c917d3ff8e7d0
-        message:"Not Implemented"
-    })
+function getProblem(req, res) {
+    return res.status(StatusCodes.NOT_IMPLEMENTED).json({
+        message: 'Not implemented'
+    });
 }
 
-function getProblems(req,res){
-<<<<<<< HEAD
-    return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
-=======
-    return res.status(501).json({
->>>>>>> 5e29e6c15c8c74fdebe78f1a182c917d3ff8e7d0
-        message:"Not Implemented"
-    })
+function getProblems(req, res) {
+    return res.status(StatusCodes.NOT_IMPLEMENTED).json({
+        message: 'Not implemented'
+    });
 }
 
-function deleteProblem(req,res){
-<<<<<<< HEAD
-    return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
-=======
-    return res.status(501).json({
->>>>>>> 5e29e6c15c8c74fdebe78f1a182c917d3ff8e7d0
-        message:"Not Implemented"
-    })
+function deleteProblem(req, res) {
+    return res.status(StatusCodes.NOT_IMPLEMENTED).json({
+        message: 'Not implemented'
+    });
 }
 
-function updateProblem(req,res){
-<<<<<<< HEAD
-    return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
-=======
-    return res.status(501).json({
->>>>>>> 5e29e6c15c8c74fdebe78f1a182c917d3ff8e7d0
-        message:"Not Implemented"
-    })
+function updateProblem(req, res) {
+    return res.status(StatusCodes.NOT_IMPLEMENTED).json({
+        message: 'Not implemented'
+    });
 }
 
 module.exports = {
@@ -63,3 +42,12 @@ module.exports = {
     updateProblem,
     pingProblemController
 }
+
+/**
+ * 
+ * res
+ * 
+ * res.status -> returns the same response object with status property set
+ * .json -> return the same response object which has status set but this json to be returned is also set
+ * 
+ */
