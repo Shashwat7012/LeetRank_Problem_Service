@@ -1,42 +1,53 @@
 const mongoose = require('mongoose');
+
 const problemSchema = new mongoose.Schema({
-    title:{
+    title: {
         type: String,
-        required: [true, 'title cannot be empty']
+        required: [true, 'Title cannot be empty']
     },
-    description:{
+    description: {
         type: String,
-        required:[true,'description cannot be empty']
+        required: [true, 'Description cannot be empty']
     },
-    difficulty:{
+    difficulty: {
         type: String,
-        enum:['easy','medium','hard'],
-        required:[true,'Difficulty cannot be empty'],
-        default:'easy'
+        enum: ['easy', 'medium', 'hard'],
+        required: [true, 'Difficulty cannot be empty'],
+        default: 'easy'
     },
-    testCases: [  // array of object
+    testCases: [
         {
-            input:{
-                type:String,
+            input: {
+                type: String,
                 required: true
             },
-            output:{
-                type:String,
-                required:true
+            output: {
+                type: String,
+                required: true
             }
         }
     ],
-    editorial:{
-        type:String
+    editorial: {
+        type: String
     }
-    
-    
-   
 });
 
-const Problem = mongoose.model('Problem',problemSchema);
+const Problem = mongoose.model('Problem', problemSchema);
 
 module.exports = Problem;
+
+/**
+ * 
+ * [{input: '5', output: '10'}, {input: '2', output: '20'}]
+ * 
+ * 
+ * 5
+ * 2 3 4 5 6
+ * 8
+ * 
+ * 1 3
+ * 
+ */
 // it is for query or creation (use it as an object)
 
 
