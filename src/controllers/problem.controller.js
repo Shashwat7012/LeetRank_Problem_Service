@@ -66,14 +66,21 @@ async function deleteProblem(req, res, next) {
     }
 }
 
-function updateProblem(req, res, next) {
+async function updateProblem(req, res, next) {
     try {
-        // nothing implemented
-        throw new NotImplemented('Add Problem');
+        const updatedData = req.body; // Assuming updated data is sent in the request body
+        const updatedProblem = await problemService.updateProblem(req.params.id, updatedData);
+        return res.status(StatusCodes.OK).json({
+            success: true,
+            message: 'Successfully updated the problem',
+            error: {},
+            data: updatedProblem
+        });
     } catch(error) {
         next(error);
     }
 }
+
 
 module.exports = {
     addProblem,
