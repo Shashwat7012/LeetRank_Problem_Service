@@ -62,8 +62,28 @@ class ProblemRepository {
             throw error;
         }
     }
+
+    async updateProblem(id, updatedData) {
+        try {
+            const updatedProblem = await Problem.findOneAndUpdate(
+                { _id: id },
+                { $set: updatedData },
+                { new: true } // Return the updated document
+            );
+
+            if (!updatedProblem) {
+                throw new NotFound("Problem", id);
+            }
+            
+            return updatedProblem;
+        } catch (error) {
+            logger.error(`Problem.Repository: Failed to update problem with id: ${id}`);
+            throw error;
+        }
+
     
 
+}
 }
 
 module.exports = ProblemRepository;
