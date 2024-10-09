@@ -1,3 +1,4 @@
+const { type } = require('express/lib/response');
 const mongoose = require('mongoose');
 
 const problemSchema = new mongoose.Schema({
@@ -24,6 +25,27 @@ const problemSchema = new mongoose.Schema({
             output: {
                 type: String,
                 required: true
+            }
+        }
+    ],
+    codeStubs: [
+        {
+            language: {
+                type : String,
+                enum: ["CPP", "JAVA", "PYTHON"],
+                required : true
+            },
+            startSnippet:{
+                type : String,
+               
+            },
+            endSnippet:{
+                type : String,
+                
+            },
+            userSnippet:{
+                type: String,
+               
             }
         }
     ],
